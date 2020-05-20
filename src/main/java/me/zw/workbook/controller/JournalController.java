@@ -12,13 +12,21 @@ public class JournalController {
 
     private static final String VIEW_INDEX = "index";
 
+    private static final String VIEW_LOGIN = "login";
+
     @Autowired
     JournalRepository repository;
 
-    @RequestMapping(value="/", method = RequestMethod.GET)
-    public ModelAndView index(ModelAndView modelAndView){
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public ModelAndView index(ModelAndView modelAndView) {
         modelAndView.setViewName(VIEW_INDEX);
         modelAndView.addObject("journal", repository.findAll());
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/login")
+    public ModelAndView login(ModelAndView modelAndView) {
+        modelAndView.setViewName(VIEW_LOGIN);
         return modelAndView;
     }
 }

@@ -11,6 +11,12 @@ spring:
     url: jdbc:postgresql://localhost:5433/journal
     username: zerowest
     password: pass
+
   data:
     rest:
       base-path: /api
+
+#  security:
+#    user:
+#      name: springboot
+#      password: isawesome
